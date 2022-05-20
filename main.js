@@ -55,12 +55,6 @@ document.body.appendChild(renderer.
   domElement)
 
   const controls = new OrbitControls(camera, renderer.domElement);
-  OrbitControls.enableDamping = true
-  OrbitControls.minDistance = 5
-  OrbitControls.maxDistance = 15
-  OrbitControls.enablePan = false
-  OrbitControls.maxPolarAngle = Math.PI /2 - 0.05
-  OrbitControls.update()
 
 
 
