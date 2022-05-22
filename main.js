@@ -201,7 +201,8 @@ const saturn = new THREE.Mesh(new
    fragmentShader: saturnFragmentShader,
    uniforms: {
      saturnTexture: {
-       value: new THREE.TextureLoader().load('./images/saturn.jpeg') 
+       value: new THREE.TextureLoader().load('./images/saturn.jpeg'),
+       
      }
    }
    
@@ -219,7 +220,7 @@ const saturnRing = new THREE.Mesh(new
    vertexShader: saturnRingVertexShader,
    fragmentShader: saturnRingFragmentShader,
    uniforms: {
-     saturnTexture: {
+     saturnRingTexture: {
        value: new THREE.TextureLoader().load('images/saturnRing.jpeg'),
        side: THREE.DoubleSide
        
@@ -352,15 +353,15 @@ camera.position.z = 100
  */
 
 //temp space background
-const spaceTexture = new THREE.TextureLoader().load('images/space.jpeg')
-scene.background = spaceTexture;
+//const spaceTexture = new THREE.TextureLoader().load('images/space.jpeg')
+//scene.background = spaceTexture;
 
 //creating stars
 const starVertices = []
 for (let i = 0; i < 10000; i++){
   const x = (Math.random() - 0.5) * 2000
   const y = (Math.random() - 0.5) * 2000
-  const z = -Math.random()* 1000
+  const z = -Math.random()* -1000
   starVertices.push(x, y, z)
 }
 const starGeometry = new THREE.BufferGeometry()
@@ -393,7 +394,7 @@ function animate() {
   venusParent.rotation.y += 0.009
   sphere_Earth.rotation.y += 0.0027
   earthParent.rotation.y += 0.008
-  moon.rotateY(0.003);
+  //moon.rotateY(0.003);
   mars.rotation.y += 0.003
   marsParent.rotation.y += 0.007
   jupiter.rotation.y += 0.009
